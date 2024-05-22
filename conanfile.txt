@@ -1,6 +1,5 @@
  [requires]
  fast-cdr/2.2.0
- rapidjson/cci.20230929
 
  [generators]
  CMakeDeps

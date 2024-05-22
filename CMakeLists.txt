@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-find_package(ament_cmake QUIET)
+find_package(fastcdr QUIET)
 
 if (ament_cmake_FOUND)
     set(USING_ROS2 TRUE)
@@ -51,8 +51,8 @@ add_library(rosx_introspection STATIC
     src/serializer.cpp
     ${EXTRA_SRC}
     )
-
-target_link_libraries(rosx_introspection )
+target_link_libraries(rosx_introspection
+    fastcdr)
 
 target_include_directories(rosx_introspection PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
