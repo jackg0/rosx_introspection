@@ -24,8 +24,6 @@ if (ament_cmake_FOUND)
        src/ros_utils/ros2_helpers.cpp)
 endif()
 
-find_package(RapidJSON REQUIRED)
-
 if(NOT USING_ROS2 )
     message(STATUS "[FastCdr] not found, create static libraries")
     # Override Fast-CDR option: compile as static lib
@@ -67,11 +65,16 @@ if(USING_ROS2)
 endif()
 
 install(TARGETS rosx_introspection
-    EXPORT rosx_introspection
+    EXPORT rosx_introspectionConfig
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
     INCLUDES DESTINATION include
+    )
+
+install(EXPORT rosx_introspectionConfig
+    DESTINATION lib/cmake/rosx_introspection
+    FILE "rosx_introspectionConfig.cmake"
     )
 
 ###############################################
