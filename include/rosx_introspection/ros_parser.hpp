@@ -143,12 +143,6 @@ public:
   bool deserialize(Span<const uint8_t> buffer, FlatMessage* flat_output,
                    Deserializer* deserializer) const;
 
-  bool deserializeIntoJson(Span<const uint8_t> buffer, std::string* json_txt,
-                           Deserializer* deserializer, int indent = 0,
-                           bool ignore_constants = false) const;
-
-  bool serializeFromJson(const std::string& json_string, Serializer* serializer) const;
-
   typedef std::function<void(const ROSType&, Span<uint8_t>&)> VisitingCallback;
 
   /**

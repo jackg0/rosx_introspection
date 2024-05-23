@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-find_package(fastcdr QUIET)
+find_package(ament_cmake QUIET)
 
 if (ament_cmake_FOUND)
     set(USING_ROS2 TRUE)
