@@ -64,6 +64,9 @@ if(USING_ROS2)
         fastcdr)
 endif()
 
+install(DIRECTORY include/rosx_introspection
+    DESTINATION include)
+
 install(TARGETS rosx_introspection
     EXPORT rosx_introspectionConfig
     ARCHIVE DESTINATION lib
